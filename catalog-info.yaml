@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: wlnyya914-nodejs-gitops
+  description: This is GitOps manifest for wlnyya914-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: wlnyya914-nodejs
+    backstage.io/kubernetes-id: wlnyya914-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: wlnyya914-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:wlnyya914-nodejs
